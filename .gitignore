@@ -1,0 +1,4 @@
+# .gitignore
+
+# Ignore Composer lock file
+# jwt-auth-api/composer.lock

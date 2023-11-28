@@ -31,13 +31,18 @@ class CustomRestApi
 
     public function __construct()
     {
-        add_action('init', [$this, 'initInclude'], 10);
-        // add_action('rest_api_init', [$this, 'include'], 15);
+        add_action('init', [$this, 'createType'], 10);
+        add_action('rest_api_init', [$this, 'registerApi'], 15);
     }
 
-    public function initInclude()
+    public function createType()
     {
         include_once('custom-content.php');
+    }
+
+    public function registerApi()
+    {
+        include_once('custom-api-controller.php');
     }
 }
 
